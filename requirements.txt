@@ -1,0 +1,11 @@
+dash
+plotly
+dash-bootstrap-components
+pandas
+numpy
+requests
+scikit-learn
+lightgbm
+xgboost
+holidays
+pytz
