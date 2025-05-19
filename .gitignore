@@ -10,4 +10,4 @@ ENV/
 .ipynb_checkpoints/
 .vscode/
 Thumbs.db
-assets/*.png
+# assets/*.png  # Quitado para permitir imágenes PNG en assets/
