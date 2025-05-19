@@ -26,7 +26,7 @@ An interactive dashboard for analyzing and forecasting hourly energy demand in C
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/LanderAgirre/energy-demand.git
+   git clone https://github.com/LanderAgirre/energy_demand.git
    ```
 
 2. **Install dependencies:**
