@@ -18,7 +18,7 @@ An interactive dashboard for analyzing and forecasting hourly energy demand in C
 ---
 
 ## 📸 Screenshots
-> ![Dashboard Main View](assets/forecast.png)
+![Dashboard Main View](assets/forecast.png)
 
 ---
 
