@@ -18,6 +18,7 @@ import holidays
 import xgboost as xgb
 from sklearn.linear_model import RidgeCV
 from sklearn.model_selection import TimeSeriesSplit
+import pickle
 
 EIA_API_KEY = "J3nXv5t8rqB6RkZCrQsLf0VzhGEgjyPJiHXKMIeS"
 
@@ -197,8 +198,21 @@ def train_model(df):
     rmse = mean_squared_error(y, y_pred) ** 0.5
     return (best_stack, best_lgb, best_xgb), scaler, mae, rmse, features
 
+def save_model(model_tuple, scaler, features, filename='model.pkl'):
+    with open(filename, 'wb') as f:
+        pickle.dump({'model_tuple': model_tuple, 'scaler': scaler, 'features': features}, f)
+
+def load_model(filename='model.pkl'):
+    with open(filename, 'rb') as f:
+        data = pickle.load(f)
+    return data['model_tuple'], data['scaler'], data['features']
+
 df_data = get_energy_data()
 model_tuple, scaler, mae, rmse, features = train_model(df_data)
+# Guardar el modelo entrenado
+save_model(model_tuple, scaler, features)
+# Para cargarlo después:
+# model_tuple, scaler, features = load_model()
 
 tabs = dcc.Tabs([
     dcc.Tab(label='Last Month Data', children=[
