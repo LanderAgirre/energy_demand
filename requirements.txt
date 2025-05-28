@@ -9,3 +9,4 @@ lightgbm
 xgboost
 holidays
 pytz
+gunicorn
